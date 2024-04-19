@@ -109,7 +109,6 @@ function App() {
     const nextStep = (
         values: PersonalInformation | AddressInformation | AccountInformation
     ) => {
-        console.log(formSteps[formSteps.length - 1].step);
         if (activeStep < formSteps[formSteps.length - 1].step) {
             setActiveStep((previousValue) => previousValue + 1);
         }

@@ -18,11 +18,15 @@ const Stepper: React.FC<StepperProps> = ({
             {formSteps.map((formStep) => (
                 <div key={formStep.step} className="relative">
                     <button
-                        onClick={() => dispatch(formStep.step)}
+                        onClick={
+                            activeStep > formStep.step
+                                ? () => dispatch(formStep.step)
+                                : undefined
+                        }
                         className={`relative inline-block w-8 h-8 rounded-full text-white ${
                             activeStep >= formStep.step
-                                ? "bg-green-600"
-                                : "bg-slate-400"
+                                ? "bg-green-600 cursor-pointer"
+                                : "bg-slate-400 cursor-default"
                         }`}
                     >
                         {formStep.step}
