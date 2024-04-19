@@ -2,6 +2,8 @@
 
 This project showcases proficiency in using React, useState, Tailwind CSS, Formik, and Yup validation.
 
+[Click here](https://freedcode-multi-step-form.netlify.app/) to see preview.
+
 ## Description
 
 The intermediate assignment involves building a React application that demonstrates various skills in frontend development. The key components include:
