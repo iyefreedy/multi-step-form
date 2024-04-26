@@ -1,7 +1,8 @@
 import Button from "./Button";
-import InputFieldPassword from "./InputFieldPassword";
 import { Form, Formik } from "formik";
 import { ObjectSchema } from "yup";
+
+import InputFieldPassword from "@components/InputFieldPassword";
 
 import { PasswordInformation } from "@/types";
 

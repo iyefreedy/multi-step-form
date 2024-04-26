@@ -3,12 +3,13 @@ import { useState } from "react";
 import { Navigate } from "react-router-dom";
 import { object, string } from "yup";
 
+import Button from "@components/Button";
 import InputField from "@components/InputField";
 import InputFieldPassword from "@components/InputFieldPassword";
+import ProgressIndicator from "@components/ProgressIndicator";
 
-import Button from "@/components/Button";
-import ProgressIndicator from "@/components/ProgressIndicator";
-import { useAuth } from "@/hooks/useAuth";
+import { useAuth } from "@hooks/useAuth";
+
 import { LoginCredential } from "@/types";
 
 const Login = () => {

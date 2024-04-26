@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 
 import Button from "@components/Button";
 
-import { useAuth } from "@/hooks/useAuth";
+import { useAuth } from "@hooks/useAuth";
 
 const Navbar = () => {
     const { user, isLoading, attemptLogout } = useAuth();

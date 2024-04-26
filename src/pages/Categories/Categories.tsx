@@ -2,10 +2,11 @@ import { CheckCircleIcon, XMarkIcon } from "@heroicons/react/24/outline";
 import React, { useMemo, useState } from "react";
 import { Link, Navigate } from "react-router-dom";
 
-import Button from "@/components/Button";
-import ProgressIndicator from "@/components/ProgressIndicator";
-import { useAuth } from "@/hooks/useAuth";
-import { useFetchCategories } from "@/hooks/useFetchCategories";
+import Button from "@components/Button";
+import ProgressIndicator from "@components/ProgressIndicator";
+
+import { useAuth } from "@hooks/useAuth";
+import { useFetchCategories } from "@hooks/useFetchCategories";
 
 type ActiveState = "all" | "active" | "inactive";
 

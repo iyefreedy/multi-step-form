@@ -2,10 +2,12 @@ import { Form, Formik } from "formik";
 import { useParams } from "react-router-dom";
 import { boolean, object, string } from "yup";
 
-import Button from "@/components/Button";
-import InputField from "@/components/InputField";
-import ProgressIndicator from "@/components/ProgressIndicator";
-import { useEditCategory } from "@/hooks/useEditCategory";
+import Button from "@components/Button";
+import InputField from "@components/InputField";
+import ProgressIndicator from "@components/ProgressIndicator";
+
+import { useEditCategory } from "@hooks/useEditCategory";
+
 import { Category } from "@/types";
 
 const EditCategory = () => {

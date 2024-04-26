@@ -1,18 +1,18 @@
-import CreateCategory from "./pages/Categories/CreateCategory";
-import EditCategory from "./pages/Categories/EditCategory";
 import React from "react";
 import ReactDOM from "react-dom/client";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
-
-import Categories from "@pages/Categories/Categories";
-import Home from "@pages/Home";
-import Login from "@pages/Login";
-import Register from "@pages/Register";
 
 import "@assets/fonts/inter/Inter-Bold.ttf";
 import "@assets/fonts/inter/Inter-Light.ttf";
 import "@assets/fonts/inter/Inter-Medium.ttf";
 import "@assets/fonts/inter/Inter-Regular.ttf";
+
+import Categories from "@pages/Categories/Categories";
+import CreateCategory from "@pages/Categories/CreateCategory";
+import EditCategory from "@pages/Categories/EditCategory";
+import Home from "@pages/Home";
+import Login from "@pages/Login";
+import Register from "@pages/Register";
 
 import App from "@/App";
 import "@/index.css";

@@ -1,10 +1,12 @@
 import { Form, Formik } from "formik";
 import { boolean, object, string } from "yup";
 
-import Button from "@/components/Button";
-import InputField from "@/components/InputField";
-import ProgressIndicator from "@/components/ProgressIndicator";
-import { useCreateCategory } from "@/hooks/useCreateCategory";
+import Button from "@components/Button";
+import InputField from "@components/InputField";
+import ProgressIndicator from "@components/ProgressIndicator";
+
+import { useCreateCategory } from "@hooks/useCreateCategory";
+
 import { Category } from "@/types";
 
 const CreateCategory = () => {
