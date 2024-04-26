@@ -6,10 +6,10 @@ const Home = () => {
     return (
         <main className="text-center">
             <img src={heroImage} alt="Hero image" className="inline-block" />
-            <h1 className="text-xl font-bold mb-4">Create your own library</h1>
+            <h1 className="mb-4 text-xl font-bold">Create your own library</h1>
             <Link
                 to={"/categories"}
-                className="py-2 px-4 bg-green-600 rounded-md shadow-md text-white"
+                className="rounded-md bg-green-600 px-4 py-2 text-white shadow-md"
             >
                 Go
             </Link>

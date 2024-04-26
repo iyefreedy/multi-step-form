@@ -22,7 +22,7 @@ const Modal = ({ isOpen, onClose, onDelete }: ModalProps) => {
     return (
         <>
             {isOpen && (
-                <div className="fixed inset-0 z-50 flex items-center justify-center overflow-x-hidden overflow-y-auto outline-none">
+                <div className="fixed inset-0 z-50 flex items-center justify-center overflow-y-auto overflow-x-hidden outline-none">
                     <div
                         className="fixed inset-0 transition-opacity"
                         aria-hidden="true"
@@ -30,15 +30,15 @@ const Modal = ({ isOpen, onClose, onDelete }: ModalProps) => {
                         <div className="absolute inset-0 bg-gray-500 opacity-75"></div>
                     </div>
 
-                    <div className="relative z-50 w-96 mx-auto bg-white rounded shadow-lg">
-                        <div className="flex items-center justify-between px-4 py-3 bg-gray-200 border-b border-gray-300 rounded-t">
+                    <div className="relative z-50 mx-auto w-96 rounded bg-white shadow-lg">
+                        <div className="flex items-center justify-between rounded-t border-b border-gray-300 bg-gray-200 px-4 py-3">
                             <h2 className="text-lg font-semibold">Confirm</h2>
                             <button
                                 onClick={onClose}
                                 className="text-gray-600 focus:outline-none"
                             >
                                 <svg
-                                    className="w-5 h-5"
+                                    className="h-5 w-5"
                                     viewBox="0 0 20 20"
                                     fill="currentColor"
                                 >
@@ -57,16 +57,16 @@ const Modal = ({ isOpen, onClose, onDelete }: ModalProps) => {
                             </p>
                         </div>
 
-                        <div className="flex items-center justify-end px-4 py-3 bg-gray-200 border-t border-gray-300 rounded-b">
+                        <div className="flex items-center justify-end rounded-b border-t border-gray-300 bg-gray-200 px-4 py-3">
                             <button
                                 onClick={handleDelete}
-                                className={`px-4 py-2 mr-2 bg-red-500 text-white rounded focus:outline-none ${isDeleting ? "opacity-50 cursor-not-allowed" : ""}`}
+                                className={`mr-2 rounded bg-red-500 px-4 py-2 text-white focus:outline-none ${isDeleting ? "cursor-not-allowed opacity-50" : ""}`}
                             >
                                 {isDeleting ? "Deleting..." : "Delete"}
                             </button>
                             <button
                                 onClick={onClose}
-                                className="px-4 py-2 bg-gray-400 text-white rounded focus:outline-none"
+                                className="rounded bg-gray-400 px-4 py-2 text-white focus:outline-none"
                             >
                                 Cancel
                             </button>

@@ -18,7 +18,7 @@ const PersonalInformationForm = ({
     onSubmit,
 }: PersonalInformationFormProps) => {
     return (
-        <div className="w-full max-w-md p-6 bg-white rounded-md shadow-md animate-slide">
+        <div className="w-full max-w-md animate-slide rounded-md bg-white p-6 shadow-md">
             <Formik<PersonalInformation>
                 initialValues={state}
                 onSubmit={onSubmit}

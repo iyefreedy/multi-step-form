@@ -50,20 +50,20 @@ const Categories = () => {
     if (isLoading)
         return (
             <div className="text-center">
-                <ProgressIndicator className="w-12 h-12 text-green-600" />
+                <ProgressIndicator className="h-12 w-12 text-green-600" />
             </div>
         );
 
     return (
         <>
-            <div className="p-6 bg-white rounded-md shadow-md">
-                <div className="flex items-center justify-between gap-4 mb-6">
-                    <h2 className="font-bold text-lg">Category List</h2>
+            <div className="rounded-md bg-white p-6 shadow-md">
+                <div className="mb-6 flex items-center justify-between gap-4">
+                    <h2 className="text-lg font-bold">Category List</h2>
 
-                    <div className="max-w-md w-full flex items-center space-x-4">
+                    <div className="flex w-full max-w-md items-center space-x-4">
                         <select
                             onChange={handleCategoryChange}
-                            className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 text-sm  focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:max-w-xs sm:leading-6 sm:text-base"
+                            className="block w-full rounded-md border-0 py-1.5 text-sm text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300  focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:max-w-xs sm:text-base sm:leading-6"
                         >
                             <option value="all">All</option>
                             <option value="active">Active</option>
@@ -73,7 +73,7 @@ const Categories = () => {
                         <Link
                             to={"/categories/create"}
                             type="button"
-                            className="flex-shrink-0 p-2 text-white bg-green-600 rounded-md text-sm md:text-base"
+                            className="flex-shrink-0 rounded-md bg-green-600 p-2 text-sm text-white md:text-base"
                         >
                             Create category
                         </Link>
@@ -81,17 +81,17 @@ const Categories = () => {
                 </div>
 
                 <div className="overflow-x-auto">
-                    <table className="border-collapse table-auto w-full text-sm overflow-x-scroll">
+                    <table className="w-full table-auto border-collapse overflow-x-scroll text-sm">
                         <thead>
                             <tr className="border-b border-b-slate-400">
-                                <th className="border-b font-medium p-4 pl-8 pt-0 pb-3 text-slate-800  text-left">
+                                <th className="border-b p-4 pb-3 pl-8 pt-0 text-left font-medium  text-slate-800">
                                     Name
                                 </th>
-                                <th className="border-b font-medium p-4 pl-8 pt-0 pb-3 text-slate-800  text-left">
+                                <th className="border-b p-4 pb-3 pl-8 pt-0 text-left font-medium  text-slate-800">
                                     Description
                                 </th>
-                                <th className="border-b font-medium p-4 pl-8 pt-0 pb-3 text-slate-800  text-left"></th>
-                                <th className="border-b font-medium p-4 pl-8 pt-0 pb-3 text-slate-800  text-left"></th>
+                                <th className="border-b p-4 pb-3 pl-8 pt-0 text-left font-medium  text-slate-800"></th>
+                                <th className="border-b p-4 pb-3 pl-8 pt-0 text-left font-medium  text-slate-800"></th>
                             </tr>
                         </thead>
                         <tbody>
@@ -105,9 +105,9 @@ const Categories = () => {
                                     </td>
                                     <td>
                                         {category.is_active ? (
-                                            <CheckCircleIcon className="w-6 h-6 text-green-600" />
+                                            <CheckCircleIcon className="h-6 w-6 text-green-600" />
                                         ) : (
-                                            <XMarkIcon className="w-6 h-6 text-red-600" />
+                                            <XMarkIcon className="h-6 w-6 text-red-600" />
                                         )}
                                     </td>
                                     <td className="w-24">

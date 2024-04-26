@@ -13,7 +13,7 @@ type ButtonRef = HTMLButtonElement;
 
 const Button = forwardRef<ButtonRef, ButtonProps>((props, ref) => {
     const className = twMerge(
-        "py-1.5 px-4 bg-green-600 text-white rounded-md disabled:opacity-60",
+        "rounded-md bg-green-600 px-4 py-1.5 text-white disabled:opacity-60",
         props.className,
     );
 

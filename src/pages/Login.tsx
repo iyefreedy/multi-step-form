@@ -38,7 +38,7 @@ const Login = () => {
 
     return (
         <div
-            className={`w-full max-w-md bg-white shadow-md rounded-md mx-auto p-6 ${isLoading && "opacity-60"}`}
+            className={`mx-auto w-full max-w-md rounded-md bg-white p-6 shadow-md ${isLoading && "opacity-60"}`}
         >
             <Formik<LoginCredential>
                 initialValues={credential}

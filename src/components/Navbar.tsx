@@ -17,14 +17,14 @@ const Navbar = () => {
     };
 
     return (
-        <nav className="bg-white py-4 px-6 shadow-md">
+        <nav className="bg-white px-6 py-4 shadow-md">
             <div className="flex items-center justify-between">
                 <div className="flex items-center space-x-4">
                     <Link
                         to={"/categories"}
-                        className="w-10 h-10 p-2 rounded-full transition border border-transparent focus:border-sky-400 focus:ring-2 focus:ring-sky-400"
+                        className="h-10 w-10 rounded-full border border-transparent p-2 transition focus:border-sky-400 focus:ring-2 focus:ring-sky-400"
                     >
-                        <BookOpenIcon className="w-6 h-6 text-sky-600" />
+                        <BookOpenIcon className="h-6 w-6 text-sky-600" />
                     </Link>
 
                     {user && <div>Hi, {user.name}</div>}
@@ -35,14 +35,14 @@ const Navbar = () => {
                         <>
                             <Link
                                 to={"/login"}
-                                className={`font-medium ${isLoading && "opacity-60 cursor-auto"}`}
+                                className={`font-medium ${isLoading && "cursor-auto opacity-60"}`}
                                 onClick={preventNavigate}
                             >
                                 Login
                             </Link>
                             <Link
                                 to={"/register"}
-                                className={`font-medium px-4 py-1.5 bg-green-600 text-white rounded-md ${isLoading && "opacity-60 cursor-auto"}`}
+                                className={`rounded-md bg-green-600 px-4 py-1.5 font-medium text-white ${isLoading && "cursor-auto opacity-60"}`}
                                 onClick={preventNavigate}
                             >
                                 Register

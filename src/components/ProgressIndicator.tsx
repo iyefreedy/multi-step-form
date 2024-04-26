@@ -5,7 +5,7 @@ interface ProgressIndicatorProps {
 }
 const ProgressIndicator = ({ className }: ProgressIndicatorProps) => {
     const progressIndicatorClassName = twMerge(
-        "inline-block mx-auto animate-spin h-5 w-5 text-white ",
+        "mx-auto inline-block h-5 w-5 animate-spin text-white ",
         className,
     );
 

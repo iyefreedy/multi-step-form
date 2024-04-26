@@ -24,8 +24,8 @@ const EditCategory = () => {
     });
 
     return (
-        <div className="p-6 bg-white rounded-md shadow-md">
-            <h2 className="font-bold text-lg">Edit Category</h2>
+        <div className="rounded-md bg-white p-6 shadow-md">
+            <h2 className="text-lg font-bold">Edit Category</h2>
 
             <Formik<Category>
                 initialValues={category}
@@ -67,7 +67,7 @@ const EditCategory = () => {
                         type="checkbox"
                         name="is_active"
                         label="Active"
-                        className="inline-block w-4 h-4 disabled:opacity-70"
+                        className="inline-block h-4 w-4 disabled:opacity-70"
                         onChange={(event) =>
                             setValue(
                                 event.target.name as keyof Category,

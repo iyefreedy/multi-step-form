@@ -5,8 +5,8 @@ import * as Yup from "yup";
 import PersonalInformationForm from "@components/PersonalInformationForm";
 import Stepper from "@components/Stepper";
 
-import PasswordInformationForm from "@/components/PasswordInformationForm";
-import { useAuth } from "@/hooks/useAuth";
+import PasswordInformationForm from "@components/PasswordInformationForm";
+import { useAuth } from "@hooks/useAuth";
 import { FormStep, PasswordInformation, PersonalInformation } from "@/types";
 import { instanceOf } from "@/utils";
 
