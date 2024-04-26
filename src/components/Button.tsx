@@ -6,13 +6,14 @@ interface ButtonProps {
     type: "submit" | "button";
     className?: string;
     onClick?: MouseEventHandler;
+    disabled?: boolean;
 }
 
 type ButtonRef = HTMLButtonElement;
 
 const Button = forwardRef<ButtonRef, ButtonProps>((props, ref) => {
     const className = twMerge(
-        "py-1.5 px-4 bg-green-600 text-white rounded-md",
+        "py-1.5 px-4 bg-green-600 text-white rounded-md disabled:opacity-60",
         props.className,
     );
 
@@ -22,6 +23,7 @@ const Button = forwardRef<ButtonRef, ButtonProps>((props, ref) => {
             type={props.type}
             className={className}
             onClick={props.onClick}
+            disabled={props.disabled}
         >
             {props.children}
         </button>

@@ -3,6 +3,7 @@ import { boolean, object, string } from "yup";
 
 import Button from "@/components/Button";
 import InputField from "@/components/InputField";
+import ProgressIndicator from "@/components/ProgressIndicator";
 import { useCreateCategory } from "@/hooks/useCreateCategory";
 import { Category } from "@/types";
 
@@ -19,7 +20,7 @@ const CreateCategory = () => {
 
     return (
         <div className="p-6 bg-white rounded-md shadow-md">
-            <h2 className="font-bold text-lg">Edit Category</h2>
+            <h2 className="font-bold text-lg">Create Category</h2>
 
             <Formik<Omit<Category, "id">>
                 initialValues={category}
@@ -53,6 +54,7 @@ const CreateCategory = () => {
                                 event.target.value,
                             )
                         }
+                        disabled={isLoading}
                     />
 
                     <InputField
@@ -67,9 +69,12 @@ const CreateCategory = () => {
                                 event.target.checked,
                             )
                         }
+                        disabled={isLoading}
                     />
 
-                    <Button type="submit">Submit</Button>
+                    <Button type="submit" disabled={isLoading}>
+                        {isLoading ? <ProgressIndicator /> : "Submit"}
+                    </Button>
                 </Form>
             </Formik>
         </div>

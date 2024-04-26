@@ -4,6 +4,7 @@ import { boolean, object, string } from "yup";
 
 import Button from "@/components/Button";
 import InputField from "@/components/InputField";
+import ProgressIndicator from "@/components/ProgressIndicator";
 import { useEditCategory } from "@/hooks/useEditCategory";
 import { Category } from "@/types";
 
@@ -72,7 +73,9 @@ const EditCategory = () => {
                         }
                     />
 
-                    <Button type="submit">Submit</Button>
+                    <Button type="submit" disabled={isLoading}>
+                        {isLoading ? <ProgressIndicator /> : "Submit"}
+                    </Button>
                 </Form>
             </Formik>
         </div>

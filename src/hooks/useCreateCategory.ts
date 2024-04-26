@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 import API from "@/API";
 import { Category } from "@/types";
@@ -10,6 +11,8 @@ export const useCreateCategory = () => {
         is_active: false,
     });
     const [isLoading, setIsLoading] = useState<boolean>(false);
+
+    const navigateTo = useNavigate();
 
     const saveCategory = async (values: Omit<Category, "id">) => {
         setIsLoading(true);
@@ -24,6 +27,8 @@ export const useCreateCategory = () => {
         }
 
         setIsLoading(false);
+
+        navigateTo("/categories");
     };
 
     const setValue = (key: keyof Category, value: Category[keyof Category]) => {

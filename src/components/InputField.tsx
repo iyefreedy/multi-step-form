@@ -38,8 +38,8 @@ const InputField = ({
                 name={name}
                 type={type ?? "text"}
                 className={mergedClassName}
-                onChange={onChange}
                 disabled={disabled}
+                onChange={onChange}
             />
             <ErrorMessage
                 name={name}

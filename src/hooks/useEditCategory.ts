@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 import API from "@/API";
 import { Category } from "@/types";
@@ -11,6 +12,8 @@ export const useEditCategory = (id: string | undefined) => {
         is_active: false,
     });
     const [isLoading, setIsLoading] = useState<boolean>(false);
+
+    const navigateTo = useNavigate();
 
     useEffect(() => {
         const fetchCategory = async (id: string | undefined) => {
@@ -44,6 +47,8 @@ export const useEditCategory = (id: string | undefined) => {
         }
 
         setIsLoading(false);
+
+        navigateTo("/categories");
     };
 
     const setValue = (key: keyof Category, value: Category[keyof Category]) => {
