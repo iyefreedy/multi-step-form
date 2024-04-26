@@ -2,7 +2,7 @@
 
 This project showcases proficiency in using React, useState, Tailwind CSS, Formik, and Yup validation.
 
-[Click here](https://freedcode-multi-step-form.netlify.app/) to see preview.
+[Click here](https://freedcode-library.netlify.app/) to see preview.
 
 ## Description
 
