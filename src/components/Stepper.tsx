@@ -14,7 +14,7 @@ const Stepper: React.FC<StepperProps> = ({
     dispatch,
 }) => {
     return (
-        <div className="w-full max-w-[300px] flex items-center justify-between mb-6 text-center">
+        <div className="w-full max-w-[200px] flex items-center justify-between mb-6 text-center">
             {formSteps.map((formStep) => (
                 <div key={formStep.step} className="relative">
                     <button

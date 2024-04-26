@@ -1,0 +1,19 @@
+{
+    "tabWidth": 4,
+    "importOrder": [
+        "^@pages/(.*)$",
+        "^@components/(.*)$",
+        "^@hooks/(.*)$",
+        "^@assets/(.*)$",
+        "^@/(.*)$"
+    ],
+    "importOrderSeparation": true,
+    "importOrderSortSpecifiers": true,
+    "tailwindFunctions": [
+        "twMerge"
+    ],
+    "plugins": [
+        "prettier-plugin-tailwindcss",
+        "@trivago/prettier-plugin-sort-imports"
+    ]
+}

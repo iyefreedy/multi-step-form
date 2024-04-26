@@ -1,6 +1,10 @@
-import { PersonalInformation } from "@/types";
+import InputField from "./InputField";
 import { ErrorMessage, Field, Form, Formik } from "formik";
 import { ObjectSchema } from "yup";
+
+import Button from "@components/Button";
+
+import { PersonalInformation } from "@/types";
 
 interface PersonalInformationFormProps {
     state: PersonalInformation;
@@ -21,24 +25,11 @@ const PersonalInformationForm = ({
                 validationSchema={schema}
             >
                 <Form>
-                    <div className="mb-4">
-                        <label
-                            htmlFor="fullName"
-                            className="block text-sm font-medium leading-6 text-gray-900"
-                        >
-                            Full Name
-                        </label>
-                        <Field
-                            id="fullName"
-                            name="fullName"
-                            className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 transition placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
-                        />
-                        <ErrorMessage
-                            name="fullName"
-                            className="text-red-600"
-                            component="div"
-                        />
-                    </div>
+                    <InputField
+                        name="fullName"
+                        id="fullName"
+                        label="Full Name"
+                    />
                     <div className="mb-4">
                         <label
                             htmlFor="email"
@@ -57,33 +48,9 @@ const PersonalInformationForm = ({
                             component="div"
                         />
                     </div>
-                    <div className="mb-4">
-                        <label
-                            htmlFor="fullName"
-                            className="block text-sm font-medium leading-6 text-gray-900"
-                        >
-                            Date of Birth
-                        </label>
-                        <Field
-                            id="dateOfBirth"
-                            name="dateOfBirth"
-                            type="date"
-                            className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 transition placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
-                        />
-                        <ErrorMessage
-                            name="dateOfBirth"
-                            className="text-red-600"
-                            component="div"
-                        />
-                    </div>
 
                     <div className="flex items-center justify-between">
-                        <button
-                            type="submit"
-                            className="py-1.5 px-4 bg-green-600 text-white rounded-md"
-                        >
-                            Next
-                        </button>
+                        <Button type="submit">Next</Button>
                     </div>
                 </Form>
             </Formik>

@@ -1,3 +1,5 @@
+import tailwindcssFormsPlugin from '@tailwindcss/forms';
+
 /** @type {import('tailwindcss').Config} */
 export default {
   content: [
@@ -6,6 +8,9 @@ export default {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        'inter': ['"Inter"', 'sans-serif']
+      },
       animation: {
         slide: 'slide 0.5s cubic-bezier(0.680, -0.550, 0.265, 1.550) both'
       },
@@ -29,6 +34,6 @@ export default {
     },
   },
   plugins: [
-    require('@tailwindcss/forms')
+    tailwindcssFormsPlugin
   ],
 }
