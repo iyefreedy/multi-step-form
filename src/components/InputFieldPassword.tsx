@@ -6,9 +6,15 @@ interface InputFieldPasswordProps {
     id?: string;
     label?: string;
     name: string;
+    disabled?: boolean;
 }
 
-const InputFieldPassword = ({ id, label, name }: InputFieldPasswordProps) => {
+const InputFieldPassword = ({
+    id,
+    label,
+    name,
+    disabled,
+}: InputFieldPasswordProps) => {
     const [showPassword, setShowPassword] = useState<boolean>(false);
 
     const toggleShowPassword = () => {
@@ -28,7 +34,8 @@ const InputFieldPassword = ({ id, label, name }: InputFieldPasswordProps) => {
                     id={id}
                     name={name}
                     type={showPassword ? "text" : "password"}
-                    className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 transition placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                    className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm disabled:opacity-60 ring-1 ring-inset ring-gray-300 transition placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                    disabled={disabled}
                 />
                 <button
                     type="button"

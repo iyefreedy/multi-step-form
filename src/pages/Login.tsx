@@ -37,7 +37,9 @@ const Login = () => {
     if (user) return <Navigate to={"/categories"} replace />;
 
     return (
-        <div className="w-full max-w-md bg-white shadow-md rounded-md mx-auto p-6">
+        <div
+            className={`w-full max-w-md bg-white shadow-md rounded-md mx-auto p-6 ${isLoading && "opacity-60"}`}
+        >
             <Formik<LoginCredential>
                 initialValues={credential}
                 onSubmit={handleLogin}
@@ -56,6 +58,7 @@ const Login = () => {
                                 email: event.target.value,
                             })
                         }
+                        disabled={isLoading}
                     />
 
                     <InputFieldPassword

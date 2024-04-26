@@ -59,6 +59,7 @@ const EditCategory = () => {
                                 event.target.value,
                             )
                         }
+                        disabled={isLoading}
                     />
 
                     <InputField
@@ -73,6 +74,7 @@ const EditCategory = () => {
                                 event.target.checked,
                             )
                         }
+                        disabled={isLoading}
                     />
 
                     <Button type="submit" disabled={isLoading}>
