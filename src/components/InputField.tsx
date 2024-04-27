@@ -1,5 +1,5 @@
 import { ErrorMessage, Field } from "formik";
-import React, { ChangeEvent } from "react";
+import React from "react";
 import { twMerge } from "tailwind-merge";
 
 interface InputFieldProps {
@@ -9,7 +9,6 @@ interface InputFieldProps {
     name: string;
     className?: string;
     disabled?: boolean;
-    onChange?: (event: ChangeEvent<HTMLInputElement>) => void;
 }
 
 const InputField = ({
@@ -18,7 +17,7 @@ const InputField = ({
     label,
     type,
     className,
-    onChange,
+
     disabled,
 }: InputFieldProps) => {
     const mergedClassName = twMerge(
@@ -39,7 +38,6 @@ const InputField = ({
                 type={type ?? "text"}
                 className={mergedClassName}
                 disabled={disabled}
-                onChange={onChange}
             />
             <ErrorMessage
                 name={name}

@@ -26,29 +26,34 @@ const PasswordInformationForm = ({
                 onSubmit={onSubmit}
                 validationSchema={schema}
             >
-                <Form>
-                    <InputFieldPassword
-                        id="password"
-                        name="password"
-                        label="Password"
-                    />
-                    <InputFieldPassword
-                        id="confirmPassword"
-                        name="confirmPassword"
-                        label="Confirm Password"
-                    />
+                {({ isSubmitting }) => (
+                    <Form>
+                        <InputFieldPassword
+                            id="password"
+                            name="password"
+                            label="Password"
+                        />
+                        <InputFieldPassword
+                            id="confirmPassword"
+                            name="confirmPassword"
+                            label="Confirm Password"
+                        />
 
-                    <div className="flex items-center justify-between">
-                        <Button
-                            type="button"
-                            onClick={onClickPrevious}
-                            className="bg-slate-600"
-                        >
-                            Previous
-                        </Button>
-                        <Button type="submit">Submit</Button>
-                    </div>
-                </Form>
+                        <div className="flex items-center justify-between">
+                            <Button
+                                type="button"
+                                onClick={onClickPrevious}
+                                className="bg-slate-600"
+                                disabled={isSubmitting}
+                            >
+                                Previous
+                            </Button>
+                            <Button type="submit" disabled={isSubmitting}>
+                                Submit
+                            </Button>
+                        </div>
+                    </Form>
+                )}
             </Formik>
         </div>
     );

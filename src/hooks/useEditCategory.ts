@@ -34,12 +34,12 @@ export const useEditCategory = (id: string | undefined) => {
         fetchCategory(id);
     }, [id]);
 
-    const updateCategory = async () => {
+    const updateCategory = async (value: Category) => {
         setIsLoading(true);
 
         try {
             const token = localStorage.getItem("token");
-            const updatedCategory = await API.updateCategory(state, token);
+            const updatedCategory = await API.updateCategory(value, token);
 
             setState({ ...updatedCategory });
         } catch (error) {
