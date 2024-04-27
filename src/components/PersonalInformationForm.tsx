@@ -5,13 +5,11 @@ import { ObjectSchema } from "yup";
 import Button from "@components/Button";
 
 import { PersonalInformation } from "@/types";
-import React from "react";
 
 interface PersonalInformationFormProps {
     state: PersonalInformation;
     schema: ObjectSchema<object, PersonalInformation>;
     onSubmit: (values: PersonalInformation) => void;
-    dispatcher: React.Dispatch<React.SetStateAction<PersonalInformation>>;
 }
 
 const PersonalInformationForm = ({
