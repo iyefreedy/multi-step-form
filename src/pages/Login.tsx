@@ -52,12 +52,6 @@ const Login = () => {
                         name="email"
                         label="Email"
                         type="email"
-                        onChange={(event) =>
-                            setCredential({
-                                ...credential,
-                                email: event.target.value,
-                            })
-                        }
                         disabled={isLoading}
                     />
 

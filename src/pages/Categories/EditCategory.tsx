@@ -12,8 +12,7 @@ import { Category } from "@/types";
 
 const EditCategory = () => {
     const { id } = useParams();
-    const { category, setValue, updateCategory, isLoading } =
-        useEditCategory(id);
+    const { category, updateCategory, isLoading } = useEditCategory(id);
 
     const categorySchema = object({
         category_name: string().required("Name is required"),
@@ -29,7 +28,7 @@ const EditCategory = () => {
 
             <Formik<Category>
                 initialValues={category}
-                onSubmit={updateCategory}
+                onSubmit={(values) => updateCategory(values)}
                 validationSchema={categorySchema}
                 enableReinitialize
             >
@@ -39,12 +38,6 @@ const EditCategory = () => {
                         name="category_name"
                         label="Category name"
                         className="disabled:opacity-70"
-                        onChange={(event) =>
-                            setValue(
-                                event.target.name as keyof Category,
-                                event.target.value,
-                            )
-                        }
                         disabled={isLoading}
                     />
 
@@ -53,12 +46,6 @@ const EditCategory = () => {
                         name="category_description"
                         label="Category description"
                         className="disabled:opacity-70"
-                        onChange={(event) =>
-                            setValue(
-                                event.target.name as keyof Category,
-                                event.target.value,
-                            )
-                        }
                         disabled={isLoading}
                     />
 
@@ -68,12 +55,6 @@ const EditCategory = () => {
                         name="is_active"
                         label="Active"
                         className="inline-block h-4 w-4 disabled:opacity-70"
-                        onChange={(event) =>
-                            setValue(
-                                event.target.name as keyof Category,
-                                event.target.checked,
-                            )
-                        }
                         disabled={isLoading}
                     />
 

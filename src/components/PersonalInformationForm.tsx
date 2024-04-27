@@ -1,15 +1,17 @@
 import InputField from "./InputField";
-import { ErrorMessage, Field, Form, Formik } from "formik";
+import { Form, Formik } from "formik";
 import { ObjectSchema } from "yup";
 
 import Button from "@components/Button";
 
 import { PersonalInformation } from "@/types";
+import React from "react";
 
 interface PersonalInformationFormProps {
     state: PersonalInformation;
     schema: ObjectSchema<object, PersonalInformation>;
     onSubmit: (values: PersonalInformation) => void;
+    dispatcher: React.Dispatch<React.SetStateAction<PersonalInformation>>;
 }
 
 const PersonalInformationForm = ({
@@ -23,6 +25,7 @@ const PersonalInformationForm = ({
                 initialValues={state}
                 onSubmit={onSubmit}
                 validationSchema={schema}
+                enableReinitialize
             >
                 <Form>
                     <InputField
@@ -30,24 +33,7 @@ const PersonalInformationForm = ({
                         id="fullName"
                         label="Full Name"
                     />
-                    <div className="mb-4">
-                        <label
-                            htmlFor="email"
-                            className="block text-sm font-medium leading-6 text-gray-900"
-                        >
-                            Email
-                        </label>
-                        <Field
-                            id="email"
-                            name="email"
-                            className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 transition placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
-                        />
-                        <ErrorMessage
-                            name="email"
-                            className="text-red-600"
-                            component="div"
-                        />
-                    </div>
+                    <InputField id="email" name="email" label="Email" />
 
                     <div className="flex items-center justify-between">
                         <Button type="submit">Next</Button>

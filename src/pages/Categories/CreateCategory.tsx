@@ -10,7 +10,7 @@ import { useCreateCategory } from "@hooks/useCreateCategory";
 import { Category } from "@/types";
 
 const CreateCategory = () => {
-    const { category, setValue, saveCategory, isLoading } = useCreateCategory();
+    const { category, saveCategory, isLoading } = useCreateCategory();
 
     const categorySchema = object({
         category_name: string().required("Name is required"),
@@ -36,12 +36,6 @@ const CreateCategory = () => {
                         name="category_name"
                         label="Category name"
                         className="disabled:opacity-70"
-                        onChange={(event) =>
-                            setValue(
-                                event.target.name as keyof Category,
-                                event.target.value,
-                            )
-                        }
                         disabled={isLoading}
                     />
 
@@ -50,12 +44,6 @@ const CreateCategory = () => {
                         name="category_description"
                         label="Category description"
                         className="disabled:opacity-70"
-                        onChange={(event) =>
-                            setValue(
-                                event.target.name as keyof Category,
-                                event.target.value,
-                            )
-                        }
                         disabled={isLoading}
                     />
 
@@ -65,12 +53,6 @@ const CreateCategory = () => {
                         name="is_active"
                         label="Active"
                         className="inline-block h-4 w-4 disabled:opacity-70"
-                        onChange={(event) =>
-                            setValue(
-                                event.target.name as keyof Category,
-                                event.target.checked,
-                            )
-                        }
                         disabled={isLoading}
                     />
 
