@@ -1,5 +1,5 @@
 import { Form, Formik } from "formik";
-import { useState } from "react";
+
 import { Navigate } from "react-router-dom";
 import { object, string } from "yup";
 
@@ -13,10 +13,6 @@ import { useAuth } from "@hooks/useAuth";
 import { LoginCredential } from "@/types";
 
 const Login = () => {
-    const [credential, setCredential] = useState<LoginCredential>({
-        email: "",
-        password: "",
-    });
     const { attemptLogin, user, isLoading } = useAuth();
 
     const credentialInformationSchema = object({
@@ -41,7 +37,10 @@ const Login = () => {
             className={`mx-auto w-full max-w-md rounded-md bg-white p-6 shadow-md ${isLoading && "opacity-60"}`}
         >
             <Formik<LoginCredential>
-                initialValues={credential}
+                initialValues={{
+                    email: "",
+                    password: "",
+                }}
                 onSubmit={handleLogin}
                 validationSchema={credentialInformationSchema}
                 enableReinitialize
